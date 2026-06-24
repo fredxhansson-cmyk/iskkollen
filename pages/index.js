@@ -3,17 +3,17 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const ORG_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"ISK Guiden\",\"url\":\"https://iskkollen.vercel.app\",\"logo\":\"https://iskkollen.vercel.app/favicon.ico\",\"description\":\"Oberoende jämförelsetjänst för svenska konsumenter inom bank.\",\"foundingDate\":\"2026\",\"inLanguage\":\"sv-SE\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"url\":\"https://iskkollen.vercel.app/kontakt\"}}";
-const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Bästa ISK för ungdomar 2026\",\"description\":\"Jämför ISK för ungdomar 2026 ✓ Enkel skattehantering ✓ Låg avgift ✓ Uppdaterad 2026\",\"url\":\"https://iskkollen.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"ISK Guiden\",\"url\":\"https://iskkollen.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://iskkollen.vercel.app\"}]}}";
-const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Bästa ISK för ungdomar 2026 — Jämförelse 2026\",\"description\":\"Jämför ISK-alternativ för ungdomar och välj rätt för framtiden\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Avanza\",\"url\":\"https://www.avanza.se\",\"description\":\"Låg avgift och bra utbildningsresurser\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"709\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Nordnet\",\"url\":\"https://www.nordnet.se\",\"description\":\"Gratis courtage för unga investerare\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"130\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"SEB\",\"url\":\"https://www.seb.se\",\"description\":\"Stöd för hållbara investeringar\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"318\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Swedbank\",\"url\":\"https://www.swedbank.se\",\"description\":\"Personlig rådgivning och stöd\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"215\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Handelsbanken\",\"url\":\"https://www.handelsbanken.se\",\"description\":\"Flexibla investeringslösningar\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.4\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"726\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Länsförsäkringar\",\"url\":\"https://www.lansforsakringar.se\",\"description\":\"Lokalt fokus och personlig service\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.3\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"784\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Sparbanken Syd\",\"url\":\"https://www.sparbankensyd.se\",\"description\":\"Kundägd bank med fokus på hållbarhet\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.2\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"765\"}}}]}";
-const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Bästa ISK för ungdomar 2026\",\"description\":\"Jämför ISK-alternativ för ungdomar och välj rätt för framtiden\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"ISK Guiden\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"ISK Guiden\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://iskkollen.vercel.app\"}}";
-const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Vilka är fördelarna med ISK?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ISK erbjuder enkel skattehantering och möjligheten att spara i aktier och fonder utan kapitalvinstskatt. Det gör sparandet mer effektivt.\"}}]}";
+const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Bästa ISK för ungdomar 2026\",\"description\":\"Hitta bästa ISK för unga 2026 ✓ Jämför Avanza, Nordnet, och fler ✓ Uppdaterad 2026\",\"url\":\"https://iskkollen.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"ISK Guiden\",\"url\":\"https://iskkollen.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://iskkollen.vercel.app\"}]}}";
+const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Bästa ISK för ungdomar 2026 — Jämförelse 2026\",\"description\":\"Upptäck bästa ISK för unga i sverige 2026\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Avanza\",\"url\":\"https://www.avanza.se\",\"description\":\"Populärt val med låg avgift och bra support\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.9\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"709\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Nordnet\",\"url\":\"https://www.nordnet.se\",\"description\":\"Stort utbud av fonder och aktier\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"130\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"SEB\",\"url\":\"https://www.seb.se\",\"description\":\"Stabil bank med bra kundtjänst\",\"feesAndCommissionsSpecification\":\"från 10 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"318\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Swedbank\",\"url\":\"https://www.swedbank.se\",\"description\":\"Erbjuder ungdomsrabatter på avgifter\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"215\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Handelsbanken\",\"url\":\"https://www.handelsbanken.se\",\"description\":\"Personlig service och rådgivning\",\"feesAndCommissionsSpecification\":\"från 20 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.4\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"726\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Länsförsäkringar\",\"url\":\"https://www.lansforsakringar.se\",\"description\":\"Kundägt med fokus på hållbarhet\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.3\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"784\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Skandia\",\"url\":\"https://www.skandia.se\",\"description\":\"Bra för pensionssparande och ISK\",\"feesAndCommissionsSpecification\":\"från 0 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.2\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"799\"}}}]}";
+const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Bästa ISK för ungdomar 2026\",\"description\":\"Upptäck bästa ISK för unga i sverige 2026\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"ISK Guiden\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"ISK Guiden\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://iskkollen.vercel.app\"}}";
+const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Vilka ISK är bäst för ungdomar?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Det beror på dina behov, men Avanza och Nordnet erbjuder ofta konkurrenskraftiga alternativ för unga investerare. Jämför avgifter och utbud noggrant innan du väljer.\"}}]}";
 
 export async function getStaticProps() {
   var now = new Date();
   var year = now.getFullYear();
   var month = now.toLocaleDateString('sv-SE', { month: 'long' });
   var updated = now.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
-  var fallback = [{"name":"Avanza","url":"https://www.avanza.se","description":"Låg avgift och bra utbildningsresurser","badge":"Bäst totalt","score":"4.8","price":"från 0 kr/mån","pros":["Ingen kontoavgift","Brett utbud av fonder","Användarvänlig app"]},{"name":"Nordnet","url":"https://www.nordnet.se","description":"Gratis courtage för unga investerare","badge":null,"score":"4.7","price":"från 0 kr/mån","pros":["Låg avgift","Bra kundservice","Utmärkt mobilapp"]},{"name":"SEB","url":"https://www.seb.se","description":"Stöd för hållbara investeringar","badge":null,"score":"4.6","price":"från 0 kr/mån","pros":["Hållbara investeringsalternativ","Stabil bank","Bra rådgivning"]},{"name":"Swedbank","url":"https://www.swedbank.se","description":"Personlig rådgivning och stöd","badge":null,"score":"4.5","price":"från 0 kr/mån","pros":["Personlig service","Säker plattform","Brett nätverk av kontor"]},{"name":"Handelsbanken","url":"https://www.handelsbanken.se","description":"Flexibla investeringslösningar","badge":null,"score":"4.4","price":"från 0 kr/mån","pros":["Flexibla lösningar","Stark kundservice","Pålitlig bank"]},{"name":"Länsförsäkringar","url":"https://www.lansforsakringar.se","description":"Lokalt fokus och personlig service","badge":null,"score":"4.3","price":"från 0 kr/mån","pros":["Lokal närvaro","Personlig kontakt","Bra försäkringslösningar"]},{"name":"Sparbanken Syd","url":"https://www.sparbankensyd.se","description":"Kundägd bank med fokus på hållbarhet","badge":null,"score":"4.2","price":"från 0 kr/mån","pros":["Kundägd","Hållbarhetsfokus","Personlig service"]}];
+  var fallback = [{"name":"Avanza","url":"https://www.avanza.se","description":"Populärt val med låg avgift och bra support","badge":"Bäst totalt","score":"4.9","price":"från 0 kr/mån","pros":["Låg avgift","Bra kundsupport","Användarvänlig plattform"]},{"name":"Nordnet","url":"https://www.nordnet.se","description":"Stort utbud av fonder och aktier","badge":null,"score":"4.7","price":"från 0 kr/mån","pros":["Brett utbud","Inga fasta avgifter","Bra mobilapp"]},{"name":"SEB","url":"https://www.seb.se","description":"Stabil bank med bra kundtjänst","badge":null,"score":"4.6","price":"från 10 kr/mån","pros":["Stabilitet","Bra kundtjänst","Många fysiska kontor"]},{"name":"Swedbank","url":"https://www.swedbank.se","description":"Erbjuder ungdomsrabatter på avgifter","badge":null,"score":"4.5","price":"från 0 kr/mån","pros":["Ungdomsrabatter","Brett kontorsnätverk","Bra digitala tjänster"]},{"name":"Handelsbanken","url":"https://www.handelsbanken.se","description":"Personlig service och rådgivning","badge":null,"score":"4.4","price":"från 20 kr/mån","pros":["Personlig service","Bra rådgivning","Stabil bank"]},{"name":"Länsförsäkringar","url":"https://www.lansforsakringar.se","description":"Kundägt med fokus på hållbarhet","badge":null,"score":"4.3","price":"från 0 kr/mån","pros":["Hållbarhet","Kundägt","Bra kundservice"]},{"name":"Skandia","url":"https://www.skandia.se","description":"Bra för pensionssparande och ISK","badge":null,"score":"4.2","price":"från 0 kr/mån","pros":["Pensionssparande","Ingen kontoavgift","Brett fondutbud"]}];
   var items = fallback.slice();
 
   return {
@@ -54,16 +54,16 @@ export default function Home({ providers, year, month, updated }) {
 
   const TRACK_BASE = 'https://axiom-engine-production-54c3.up.railway.app/r';
   const SITE_SLUG = 'iskkollen';
-  const AffBtn = ({ url, name, primary }) => {
+  const AffBtn = ({ url, name, primary, network }) => {
     var href = TRACK_BASE && TRACK_BASE.startsWith('http')
-      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG
+      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG + (network && network !== 'adtraction' ? '&network=' + encodeURIComponent(network) : '')
       : url;
     return (
       <a href={href} target="_blank" rel="noopener noreferrer sponsored"
         style={{ display:'inline-block', background: primary ? pc : '#0f172a', color:'#fff',
           padding:'11px 22px', borderRadius:9, fontWeight:700, fontSize:14,
           textDecoration:'none', whiteSpace:'nowrap', transition:'opacity .15s' }}>
-        Välj {name} →
+        {network === 'amazon' ? 'Köp på Amazon →' : 'Välj ' + name + ' →'}
       </a>
     );
   };
@@ -83,12 +83,12 @@ export default function Home({ providers, year, month, updated }) {
     <>
       <Head>
         <title>Bästa ISK för ungdomar 2026</title>
-        <meta name="description" content="Jämför ISK för ungdomar 2026 ✓ Enkel skattehantering ✓ Låg avgift ✓ Uppdaterad 2026" />
+        <meta name="description" content="Hitta bästa ISK för unga 2026 ✓ Jämför Avanza, Nordnet, och fler ✓ Uppdaterad 2026" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://iskkollen.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Bästa ISK för ungdomar 2026" />
-        <meta property="og:description" content="Jämför ISK för ungdomar 2026 ✓ Enkel skattehantering ✓ Låg avgift ✓ Uppdaterad 2026" />
+        <meta property="og:description" content="Hitta bästa ISK för unga 2026 ✓ Jämför Avanza, Nordnet, och fler ✓ Uppdaterad 2026" />
         <meta property="og:url" content="https://iskkollen.vercel.app" />
         <meta property="og:locale" content="sv_SE" />
         <meta property="og:site_name" content="ISK Guiden" />
@@ -97,7 +97,7 @@ export default function Home({ providers, year, month, updated }) {
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Bästa ISK för ungdomar 2026" />
-        <meta name="twitter:description" content="Jämför ISK för ungdomar 2026 ✓ Enkel skattehantering ✓ Låg avgift ✓ Uppdaterad 2026" />
+        <meta name="twitter:description" content="Hitta bästa ISK för unga 2026 ✓ Jämför Avanza, Nordnet, och fler ✓ Uppdaterad 2026" />
         <meta name="twitter:image" content="https://iskkollen.vercel.app/api/og?title=B%C3%A4sta%20ISK%20f%C3%B6r%20ungdomar%202026&niche=bank" />
         <link rel="alternate" hreflang="sv" href="https://iskkollen.vercel.app" />
         <link rel="alternate" hreflang="x-default" href="https://iskkollen.vercel.app" />
@@ -148,12 +148,12 @@ export default function Home({ providers, year, month, updated }) {
             </h1>
             <p style={{ fontSize:18, color:'#475569', lineHeight:1.72,
               marginBottom:32, maxWidth:540 }}>
-              Jämför ISK-alternativ för ungdomar och välj rätt för framtiden
+              Upptäck bästa ISK för unga i sverige 2026
             </p>
             <a href="#jamfor" style={{ display:'inline-block', background:pc, color:'#fff',
               padding:'14px 32px', borderRadius:10, fontWeight:700, fontSize:16,
               textDecoration:'none', boxShadow:'0 4px 24px '+pc+'44' }}>
-              Välj rätt ISK nu →
+              Jämför ISK nu →
             </a>
             <p style={{ marginTop:14, fontSize:13, color:'#94a3b8' }}>
               Gratis &middot; Oberoende &middot; Ingen prenumeration
@@ -167,7 +167,7 @@ export default function Home({ providers, year, month, updated }) {
         padding:'16px 20px', fontFamily:'Inter,sans-serif' }}>
         <div style={{ maxWidth:960, margin:'0 auto', display:'flex',
           gap:32, flexWrap:'wrap', justifyContent:'center', alignItems:'center' }}>
-          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#0369a1',fontWeight:800,flexShrink:0}}>✓</span><span>Enkel skattehantering</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#0369a1',fontWeight:800,flexShrink:0}}>✓</span><span>Brett investeringsutbud</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#0369a1',fontWeight:800,flexShrink:0}}>✓</span><span>Låg avgift</span></div>
+          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#0369a1',fontWeight:800,flexShrink:0}}>✓</span><span>Lägre skatt</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#0369a1',fontWeight:800,flexShrink:0}}>✓</span><span>Enkel hantering</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#0369a1',fontWeight:800,flexShrink:0}}>✓</span><span>Många investeringsmöjligheter</span></div>
         </div>
       </div>
 
@@ -202,6 +202,11 @@ export default function Home({ providers, year, month, updated }) {
                 <div style={{ width:44, height:44, borderRadius:12, background: i===0 ? pcLight : '#f8fafc', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:800, fontSize:16, color: i===0 ? pc : '#64748b', flexShrink:0, border:'1px solid '+(i===0 ? pcMed : '#e2e8f0') }}>
                   {['1','2','3','4','5'][i] || (i+1)}
                 </div>
+                {p.image && (
+                  <div style={{ width:72, height:72, flexShrink:0, borderRadius:10, background:'#f8fafc', border:'1px solid #e2e8f0', display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
+                    <img src={p.image} alt={p.name} style={{ maxWidth:68, maxHeight:68, objectFit:'contain' }} onError={function(e){e.target.style.display='none';}} />
+                  </div>
+                )}
                 <div style={{ flex:1, minWidth:200 }}>
                   <div style={{ fontWeight:800, fontSize:18, color:'#0f172a', marginBottom:3 }}>{p.name}</div>
                   <div style={{ fontSize:13, color:'#64748b', marginBottom:10 }}>{p.description}</div>
@@ -211,7 +216,7 @@ export default function Home({ providers, year, month, updated }) {
                   <div style={{ fontSize:22, fontWeight:800, color:pc }}>{p.currentPrice || p.price}</div>
                   <Stars score={p.score} />
                   <div style={{ background:'#f0fdf4', color:'#15803d', fontSize:11, fontWeight:700, padding:'3px 10px', borderRadius:8 }}>{p.badge}</div>
-                  <AffBtn url={p.url} name={p.name} primary={i===0} />
+                  <AffBtn url={p.url} name={p.name} primary={i===0} network={p.network} />
                   <button onClick={() => toggleSelect(p.name)} style={{ padding:'7px 14px', borderRadius:8, fontSize:12, fontWeight:600, cursor: selected.includes(p.name) || selected.length < 3 ? 'pointer' : 'not-allowed', fontFamily:'Inter,sans-serif', border:'1px solid', borderColor: selected.includes(p.name) ? pc : '#e2e8f0', background: selected.includes(p.name) ? pcLight : '#fff', color: selected.includes(p.name) ? pc : '#64748b', opacity: !selected.includes(p.name) && selected.length >= 3 ? 0.4 : 1 }}>
                     {selected.includes(p.name) ? '✓ Vald' : '+ Jämför'}
                   </button>
@@ -321,7 +326,7 @@ export default function Home({ providers, year, month, updated }) {
                       </div>
                     )}
                     <div style={{ marginTop:'auto', paddingTop:10 }}>
-                      <AffBtn url={p.url} name={p.name} primary={true} />
+                      <AffBtn url={p.url} name={p.name} primary={true} network={p.network} />
                     </div>
                   </div>
                 );})}
@@ -346,17 +351,17 @@ export default function Home({ providers, year, month, updated }) {
         fontFamily:'Inter,sans-serif' }}>
         <div style={{ maxWidth:760, margin:'0 auto' }}>
           <h2 style={{ fontSize:28, fontWeight:800, marginBottom:20, color:'#0f172a' }}>
-            Så öppnar du ISK
+            Så väljer du rätt
           </h2>
           <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>
-            Att öppna ett ISK för ungdomar är en relativt enkel process, men det finns några steg som är viktiga att följa för att säkerställa att allt går smidigt. Först och främst måste den som öppnar kontot vara myndig, vilket innebär att en förälder eller vårdnadshavare ofta behöver vara delaktig om kontot ska öppnas för en ungdom. Det första steget är att välja en bank eller finansiell institution som erbjuder ett investeringssparkonto. Det är klokt att jämföra olika alternativ baserat på faktorer som kostnader, användarvänlighet och möjligheter till investeringar. När du har valt en leverantör kan du vanligtvis öppna kontot online genom att fylla i de nödvändiga uppgifterna och verifiera din identitet. När kontot är öppnat kan du börja överföra pengar till det och välja vilka investeringar du vill göra. Det kan vara bra att börja med en diversifierad portfölj för att minimera riskerna. Kom ihåg att det är viktigt att regelbundet se över dina investeringar och justera dem vid behov för att nå dina långsiktiga ekonomiska mål.
+            Att välja rätt investeringssparkonto (ISK) kan vara avgörande för att maximera dina investeringar. För ungdomar är det viktigt att överväga flera faktorer innan man bestämmer sig för en leverantör. Först och främst bör du tänka på de avgifter som tillkommer. Även om en del banker erbjuder kostnadsfria konton kan det finnas dolda avgifter för specifika tjänster. Jämför dessa kostnader noggrant mellan olika banker som Avanza, Nordnet, och andra. Förutom avgifter bör du också överväga vilket utbud av investeringsalternativ som erbjuds. Vissa banker kan ha ett större utbud av fonder och aktier, medan andra kan erbjuda mer specifika investeringar som ETF:er eller indexfonder. Slutligen, tänk på användarvänligheten av plattformen. En enkel och intuitiv plattform kan göra det mycket lättare att hantera dina investeringar, särskilt om du är nybörjare.
           </p>
           <h3 style={{ fontSize:22, fontWeight:700, marginBottom:16, color:'#0f172a', marginTop:40 }}>Vanliga misstag</h3>
-          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>När man öppnar ett ISK för ungdomar är det vanligt med vissa misstag som kan undvikas med rätt kunskap. Ett av de vanligaste misstagen är att inte jämföra olika leverantörers erbjudanden ordentligt. Många föräldrar och ungdomar väljer första bästa alternativ utan att tänka på avgifter eller investeringsmöjligheter, vilket kan leda till onödiga kostnader. Ett annat misstag är att inte sätta upp klara mål för sparandet, vilket kan göra det svårare att hålla motivationen uppe. Slutligen är det viktigt att inte glömma bort att regelbundet se över och justera din investeringsstrategi. Marknaden förändras ständigt, och det är viktigt att anpassa sig för att maximera avkastningen och minimera riskerna.</p>
+          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>Många ungdomar gör misstaget att inte jämföra olika ISK-leverantörer noggrant. Att bara välja det första bästa alternativet kan leda till högre avgifter och begränsade investeringsmöjligheter. Ett annat vanligt misstag är att inte diversifiera sina investeringar. Att sätta alla sina pengar i en enda aktie eller fond kan vara riskfyllt. Istället bör du sprida dina investeringar över flera tillgångar för att minska riskerna. Slutligen, många unga investerare glömmer att kontinuerligt övervaka och justera sina portföljer. Marknader förändras, och det är viktigt att justera sina investeringar över tid för att optimera avkastningen.</p>
           <h3 style={{ fontSize:20, fontWeight:700, marginBottom:24, color:'#0f172a' }}>
             Vad ska du tänka på?
           </h3>
-          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#0369a115',color:'#0369a1',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför alltid avgifter</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#0369a115',color:'#0369a1',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Sätt tydliga sparmål</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#0369a115',color:'#0369a1',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Diversifiera investeringarna</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#0369a115',color:'#0369a1',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Övervaka regelbundet</p></div>
+          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#0369a115',color:'#0369a1',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför avgifter noggrant</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#0369a115',color:'#0369a1',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Diversifiera dina investeringar</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#0369a115',color:'#0369a1',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Välj en användarvänlig plattform</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#0369a115',color:'#0369a1',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Övervaka och justera regelbundet</p></div>
         </div>
       </section>
 
@@ -365,7 +370,7 @@ export default function Home({ providers, year, month, updated }) {
         <h2 style={{ fontSize:26, fontWeight:800, marginBottom:32, color:'#0f172a' }}>
           Vanliga frågor
         </h2>
-        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Vilka är fördelarna med ISK?<span style={{color:'#0369a1',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>ISK erbjuder enkel skattehantering och möjligheten att spara i aktier och fonder utan kapitalvinstskatt. Det gör sparandet mer effektivt.</p></details>
+        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Vilka ISK är bäst för ungdomar?<span style={{color:'#0369a1',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>Det beror på dina behov, men Avanza och Nordnet erbjuder ofta konkurrenskraftiga alternativ för unga investerare. Jämför avgifter och utbud noggrant innan du väljer.</p></details>
       </section>
 
       <section style={{ background:'#f8fafc', borderTop:'1px solid #e2e8f0', padding:'32px 20px', fontFamily:'Inter,sans-serif' }}>
